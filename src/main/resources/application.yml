@@ -1,0 +1,18 @@
+server:
+  port: 5556
+spring:
+  application:
+    name: zuul-filter
+# set routes use serviceId
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: compute-serviceA
+    api-b:
+      path: /api-b/**
+      serviceId: compute-serviceB
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.5.2.241:1111/eureka/
